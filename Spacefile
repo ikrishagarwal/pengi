@@ -1,0 +1,22 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+    - name: pengi
+      src: .
+      engine: nodejs16
+      commands:
+          - npx tsc -b src
+      run: 'node dist/Bot.js'
+      primary: true
+      public_routes:
+          - "/*"
+      presets:
+          env:
+              - name: DISCORD_TOKEN
+                description: Discord Bot Token
+              - name: OWNER_ID
+                description: Discord User ID of the bot owner
+              - name: DISCORD_PUBLIC_KEY
+                description: Discord Public Key
+              - name: GUILD_ID
+                description: Discord Guild ID
