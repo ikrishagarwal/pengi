@@ -1,3 +1,4 @@
+import '#root/config';
 import { Registry } from '@skyra/http-framework';
 
 async function main() {
