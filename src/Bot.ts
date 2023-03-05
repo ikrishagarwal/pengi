@@ -13,7 +13,7 @@ async function main() {
 
 	if (envParseString('NODE_ENV') !== 'production' && envIsDefined('GUILD_ID'))
 		await registry.registerGlobalCommandsInGuild(envParseString('GUILD_ID'));
-	else throw new Error('GUILD_ID must be defined in development mode.');
+	else container.logger.error('No GUILD_ID is set for development mode.');
 
 	await client.load();
 
