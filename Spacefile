@@ -7,7 +7,7 @@ micros:
       commands:
           - npx tsc -b src
           - npm run register
-      run: 'npm run start'
+      run: 'node dist/Bot.js'
       primary: true
       public_routes:
           - '/*'
