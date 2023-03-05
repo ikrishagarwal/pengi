@@ -6,7 +6,6 @@ micros:
       engine: nodejs16
       commands:
           - npx tsc -b src
-          - npm run register
       run: 'node dist/Bot.js'
       primary: true
       public_routes:

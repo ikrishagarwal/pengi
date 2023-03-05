@@ -12,22 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Create `.env` file
-        run: echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> src/.env
-      - name: Add problem matcher
-        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
-      - name: Use Node.js v18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
-          registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        run: yarn --immutable
-      - name: Build Code
-        run: yarn build
-      - name: Register commands
-        run: yarn register
       - name: Push to Deta Space
         uses: neobrains/space-deployment-github-action@v0.3
         with:
