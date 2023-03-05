@@ -17,7 +17,8 @@
 		"watch": "yarn tsc-watch -b src --onSuccess \"yarn start\"",
 		"lint": "eslint --fix --ext .ts src",
 		"format": "prettier --write --loglevel=warn \"src/**/*.{js,ts,json}\"",
-		"postinstall": "husky install .github/husky"
+		"postinstall": "husky install .github/husky",
+		"register": "node dist/register.js"
 	},
 	"dependencies": {
 		"@skyra/env-utilities": "^1.1.0",

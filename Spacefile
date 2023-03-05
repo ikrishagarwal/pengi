@@ -6,10 +6,11 @@ micros:
       engine: nodejs16
       commands:
           - npx tsc -b src
-      run: 'node dist/Bot.js'
+          - npm run register
+      run: 'npm run start'
       primary: true
       public_routes:
-          - "/*"
+          - '/*'
       presets:
           env:
               - name: DISCORD_TOKEN
@@ -18,5 +19,5 @@ micros:
                 description: Discord User ID of the bot owner
               - name: DISCORD_PUBLIC_KEY
                 description: Discord Public Key
-              - name: GUILD_ID
-                description: Discord Guild ID
+              - name: NODE_ENV
+                description: Node Environment (production or development)
