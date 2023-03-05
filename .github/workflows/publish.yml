@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+      - name: Create `.env` file
+        run: echo "DISCORD_TOKEN={{ secrets.DISCORD_TOKEN }}" >> src/.env
       - name: Push to Deta Space
         uses: neobrains/space-deployment-github-action@v0.3
         with:
