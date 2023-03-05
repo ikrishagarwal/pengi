@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Create `.env` file
-        run: echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> .env
+        run: echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> src/.env
       - name: Add problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
       - name: Use Node.js v18
