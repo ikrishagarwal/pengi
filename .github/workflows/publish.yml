@@ -6,6 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
+  register-slash-commands:
+    name: Compile source code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+      - name: Use Node.js v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+          registry-url: https://registry.npmjs.org/
+      - name: Install Dependencies
+        run: yarn --immutable
+      - name: Build Code
+        run: yarn build
+      - name: Register Slash Commands
+        run: yarn register
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
   push-to-space:
     runs-on: ubuntu-latest
 
