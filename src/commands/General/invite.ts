@@ -1,11 +1,12 @@
 import { Command, RegisterCommand } from '@skyra/http-framework';
 import { APIActionRowComponent, APIMessageActionRowComponent, ButtonBuilder, ButtonStyle } from 'discord.js';
 import { ComponentType } from 'discord-api-types/v10';
+import { appendDev } from '#utils/functions';
 
 @RegisterCommand((builder) =>
 	builder //
 		.setName('invite')
-		.setDescription('Get the invitation link.')
+		.setDescription(appendDev('Get the invitation link.'))
 )
 export class UserCommand extends Command {
 	public override async chatInputRun(interaction: Command.ChatInputInteraction) {
