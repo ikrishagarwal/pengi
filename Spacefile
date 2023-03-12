@@ -20,3 +20,4 @@ micros:
                 description: Discord Public Key
               - name: NODE_ENV
                 description: Node Environment (production or development)
+                default: 'production'

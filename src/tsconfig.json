@@ -6,7 +6,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"#root/*": ["*"],
-			"#lib/*": ["lib/*"]
+			"#lib/*": ["lib/*"],
+			"#utils/*": ["lib/utils/*"]
 		},
 		"composite": true
 	},
