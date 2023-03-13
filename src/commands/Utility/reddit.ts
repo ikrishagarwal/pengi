@@ -1,6 +1,7 @@
 import { appendDev } from '#utils/functions';
 import { Command, RegisterCommand } from '@skyra/http-framework';
 import { EmbedBuilder } from 'discord.js';
+import { fetch, FetchResultTypes } from '@sapphire/fetch';
 
 @RegisterCommand((builder) =>
 	builder //
@@ -18,9 +19,7 @@ export class UserCommand extends Command {
 		if (!option.post) return interaction.reply({ content: 'Please provide a URL.' });
 
 		try {
-			const index = option.post.includes('?') ? option.post.indexOf('?') - 1 : option.post.length;
-			const url = `${option.post.substring(0, index)}.json`;
-			const post = await this.fetchPost(url);
+			const post = await this.fetchPost(this.parseURL(option.post));
 
 			const mediaURL = post.secure_media?.reddit_video?.fallback_url ?? post.url;
 
@@ -37,13 +36,35 @@ export class UserCommand extends Command {
 	}
 
 	private async fetchPost(url: string) {
-		const response = await fetch(url);
-		const json = await response.json();
+		const response = await fetch<RedditResponse[]>(url, FetchResultTypes.JSON);
+		return response[0].data.children[0].data;
+	}
 
-		return json[0].data.children[0].data;
+	private parseURL(url: string) {
+		url = url.includes('?') ? url.substring(0, url.indexOf('?')) : url;
+		url = url.endsWith('/') ? url.substring(0, url.length - 1) : url;
+		return `${url}.json`;
 	}
 }
 
 interface Option {
 	post: string;
+}
+
+interface RedditResponse {
+	data: {
+		children: {
+			data: {
+				title: string;
+				permalink: string;
+				url: string;
+				selftext: string;
+				secure_media: {
+					reddit_video: {
+						fallback_url: string;
+					};
+				};
+			};
+		}[];
+	};
 }

@@ -1,7 +1,7 @@
 {
 	"name": "pengi",
 	"author": "Krish",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"packageManager": "yarn@3.4.1",
 	"private": true,
 	"license": "MIT",
@@ -22,6 +22,7 @@
 		"register": "node dist/register.js"
 	},
 	"dependencies": {
+		"@sapphire/fetch": "^2.4.1",
 		"@skyra/env-utilities": "^1.1.0",
 		"@skyra/http-framework": "^0.15.2",
 		"@skyra/logger": "^1.0.1",
@@ -67,5 +68,8 @@
 		"extends": [
 			"@commitlint/config-conventional"
 		]
+	},
+	"volta": {
+		"node": "16.19.1"
 	}
 }
