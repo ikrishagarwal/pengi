@@ -1,9 +1,9 @@
 import { Command, RegisterCommand } from '@skyra/http-framework';
-import { ButtonBuilder, ButtonStyle } from 'discord.js';
+import { ButtonBuilder, ButtonStyle, SlashCommandBuilder } from 'discord.js';
 import { ComponentType } from 'discord-api-types/v10';
 import { appendDev } from '#utils/functions';
 
-@RegisterCommand((builder) =>
+@RegisterCommand((builder: SlashCommandBuilder) =>
 	builder //
 		.setName('invite')
 		.setDescription(appendDev('Get the invitation link.'))

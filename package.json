@@ -16,7 +16,7 @@
 		"start": "node dist/Bot.js --enable-source-maps",
 		"build": "tsc -b src",
 		"watch": "yarn tsc-watch -b src --onSuccess \"yarn start\"",
-		"lint": "eslint --fix --ext .ts src",
+		"lint": "eslint src --fix",
 		"format": "prettier --write --loglevel=warn \"src/**/*.{js,ts,json}\"",
 		"postinstall": "husky install .github/husky",
 		"register": "node dist/register.js"
@@ -58,12 +58,7 @@
 			"eslint --fix --ext ts,js"
 		]
 	},
-	"eslintConfig": {
-		"extends": "@sapphire",
-		"rules": {
-			"@typescript-eslint/no-base-to-string": "off"
-		}
-	},
+
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"

@@ -1,14 +1,14 @@
 import { container } from '@sapphire/pieces';
 import { appendDev } from '#utils/functions';
 import { Command, RegisterCommand } from '@skyra/http-framework';
-import { EmbedBuilder } from 'discord.js';
+import { EmbedBuilder, SlashCommandBuilder, SlashCommandStringOption } from 'discord.js';
 import { fetch, FetchResultTypes } from '@sapphire/fetch';
 
-@RegisterCommand((builder) =>
+@RegisterCommand((builder: SlashCommandBuilder) =>
 	builder //
 		.setName('reddit')
 		.setDescription(appendDev('Extract reddit image/video from URL.'))
-		.addStringOption((option) =>
+		.addStringOption((option: SlashCommandStringOption) =>
 			option //
 				.setName('post')
 				.setDescription('URL of the reddit post.')
