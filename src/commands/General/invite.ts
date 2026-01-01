@@ -1,5 +1,5 @@
 import { Command, RegisterCommand } from '@skyra/http-framework';
-import { APIActionRowComponent, APIMessageActionRowComponent, ButtonBuilder, ButtonStyle } from 'discord.js';
+import { ButtonBuilder, ButtonStyle } from 'discord.js';
 import { ComponentType } from 'discord-api-types/v10';
 import { appendDev } from '#utils/functions';
 
@@ -10,7 +10,7 @@ import { appendDev } from '#utils/functions';
 )
 export class UserCommand extends Command {
 	public override async chatInputRun(interaction: Command.ChatInputInteraction) {
-		const actionRow: APIActionRowComponent<APIMessageActionRowComponent> = {
+		const actionRow: any = {
 			type: ComponentType.ActionRow,
 			components: [
 				new ButtonBuilder()

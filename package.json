@@ -22,32 +22,32 @@
 		"register": "node dist/register.js"
 	},
 	"dependencies": {
-		"@sapphire/fetch": "^2.4.1",
-		"@skyra/env-utilities": "^1.1.0",
-		"@skyra/http-framework": "^0.15.2",
-		"@skyra/logger": "^1.0.1",
-		"colorette": "^2.0.19",
-		"discord.js": "^14.7.1"
+		"@sapphire/fetch": "^3.0.5",
+		"@skyra/env-utilities": "^2.0.1",
+		"@skyra/http-framework": "^0.15.5",
+		"@skyra/logger": "^2.0.4",
+		"colorette": "^2.0.20",
+		"discord.js": "^14.25.1"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^17.4.4",
-		"@commitlint/config-conventional": "^17.4.4",
-		"@sapphire/eslint-config": "^4.3.8",
-		"@sapphire/prettier-config": "^1.4.5",
-		"@sapphire/ts-config": "^3.3.4",
-		"@types/node": "^18.14.5",
-		"@typescript-eslint/eslint-plugin": "^5.54.0",
-		"@typescript-eslint/parser": "^5.54.0",
-		"discord-api-types": "0.37.35",
-		"eslint": "^8.35.0",
-		"eslint-config-prettier": "^8.6.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"husky": "^8.0.3",
-		"lint-staged": "^13.1.2",
-		"prettier": "^2.8.4",
-		"pretty-quick": "^3.1.3",
-		"tsc-watch": "^6.0.0",
-		"typescript": "^4.9.5"
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
+		"@sapphire/eslint-config": "^5.0.6",
+		"@sapphire/prettier-config": "^2.0.0",
+		"@sapphire/ts-config": "^5.0.3",
+		"@types/node": "^25.0.3",
+		"@typescript-eslint/eslint-plugin": "^8.51.0",
+		"@typescript-eslint/parser": "^8.51.0",
+		"discord-api-types": "0.38.37",
+		"eslint": "^9.39.2",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
+		"prettier": "^3.7.4",
+		"pretty-quick": "^4.2.2",
+		"tsc-watch": "^7.2.0",
+		"typescript": "^5.9.3"
 	},
 	"engines": {
 		"node": ">=18.x.x"
@@ -70,6 +70,6 @@
 		]
 	},
 	"volta": {
-		"node": "16.19.1"
+		"node": "25.2.1"
 	}
 }

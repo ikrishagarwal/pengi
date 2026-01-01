@@ -1,3 +1,4 @@
+import { container } from '@sapphire/pieces';
 import { appendDev } from '#utils/functions';
 import { Command, RegisterCommand } from '@skyra/http-framework';
 import { EmbedBuilder } from 'discord.js';
@@ -30,7 +31,7 @@ export class UserCommand extends Command {
 				.setDescription(`[Click for media link](${mediaURL})\n${post.selftext}`);
 			return interaction.reply({ embeds: [embed.toJSON()] });
 		} catch (e) {
-			this.container.logger.error('Error while trying to fetch post: ', e);
+			container.logger.error('Error while trying to fetch post: ', e);
 			return interaction.reply({ content: "An error occurred while trying to fetch the post. Please recheck the URL if it's correct." });
 		}
 	}
